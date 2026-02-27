@@ -4,88 +4,182 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>锦的创作资源导航</title>
+  <meta name="description" content="锦的创作资源导航：AI内容生产与多平台分发工作台" />
   <style>
-    :root{--bg:#f6f4ef;--card:#fffdfa;--text:#2e2a24;--muted:#776c60;--line:#e8dfd3;--accent:#b58650;--shadow:0 10px 30px rgba(77,60,38,.08)}
-    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#f8f6f1,#f3efe6);color:var(--text)}
-    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 60px}
-    .hero{background:rgba(255,255,255,.72);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:20px;padding:26px}
-    h1{margin:0;font-size:34px}.sub{margin-top:8px;color:var(--muted);line-height:1.7}
-    .bar{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;padding:7px 12px;border-radius:999px;color:#6d6257;font-size:13px}
-    .section{margin-top:26px}.section h2{font-size:20px;margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 6px;font-size:17px}.card p{margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.55}
-    .btn{display:inline-block;text-decoration:none;border:1px solid #d7c5af;background:linear-gradient(180deg,#fff,#f8f2e8);padding:9px 12px;border-radius:10px;color:#6a4a2c;font-weight:600}
-    .list{margin:0;padding-left:18px;color:#6d6257;line-height:1.8;font-size:14px}
-    .kpi{display:flex;gap:14px;flex-wrap:wrap}.kpi .box{flex:1;min-width:180px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-    .note{margin-top:20px;padding:12px 14px;border:1px dashed #d9c7af;border-radius:12px;background:#fffaf1;color:#775f42;font-size:14px}
-    footer{margin-top:24px;color:#8a7b6a;font-size:13px}
+    :root{
+      --bg:#f6f3ec;
+      --bg2:#f1ece3;
+      --card:#fffdfa;
+      --text:#2e2923;
+      --muted:#7b6f62;
+      --line:#e7ddcf;
+      --accent:#b48653;
+      --accent-soft:#e9d4bb;
+      --shadow:0 14px 40px rgba(74,56,34,.10);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #fff7ea 0%, transparent 50%),
+        radial-gradient(1000px 500px at 90% 0%, #f9efe1 0%, transparent 50%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+    }
+    .container{max-width:1140px;margin:0 auto;padding:28px 18px 70px}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(255,250,242,.75));
+      box-shadow:var(--shadow);
+      padding:30px;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle,#f1ddc3 0%,rgba(241,221,195,0) 72%);
+    }
+    h1{margin:0;font-size:38px;letter-spacing:.5px}
+    .subtitle{margin-top:10px;color:var(--muted);line-height:1.8;max-width:740px}
+    .pill-row{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+    .pill{
+      border:1px solid var(--line);
+      background:#fff;
+      color:#665b4f;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    .section{margin-top:28px}
+    .section-title{font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+    .section-title:before{content:"";display:inline-block;width:18px;height:3px;background:var(--accent);border-radius:10px}
+
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(61,45,28,.06);
+      padding:15px;
+      transition:all .2s ease;
+    }
+    .card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(61,45,28,.11)}
+    .card h3{margin:0 0 6px;font-size:17px}
+    .card p{margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.6}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:6px;
+      text-decoration:none;
+      border:1px solid #d9c5ab;
+      background:linear-gradient(180deg,#fff,#f8f0e5);
+      color:#6a4929;
+      font-weight:600;
+      padding:9px 13px;
+      border-radius:11px;
+      font-size:14px;
+    }
+
+    .timeline{display:grid;gap:10px}
+    .step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+    .dot{width:9px;height:9px;border-radius:50%;margin-top:7px;background:var(--accent)}
+    .step b{font-size:14px}
+    .step span{display:block;color:var(--muted);font-size:13px;line-height:1.7}
+
+    .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+    .kpi .item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+    .kpi .item .t{font-size:13px;color:#7c6f60}
+    .kpi .item .v{margin-top:4px;font-size:16px;font-weight:700}
+
+    .notice{
+      margin-top:20px;
+      border:1px dashed #dcc7ac;
+      background:#fff8ef;
+      color:#7b6448;
+      border-radius:12px;
+      padding:12px 14px;
+      font-size:14px;
+    }
+
+    footer{margin-top:26px;color:#8a7b69;font-size:13px}
+
+    @media (max-width:640px){
+      h1{font-size:30px}
+      .hero{padding:22px}
+      .section-title{font-size:18px}
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="hero">
+  <main class="container">
+    <section class="hero">
       <h1>锦的创作资源导航</h1>
-      <div class="sub">深圳市铂晶艺术文化有限公司 · 内容创作与品牌传播工作台<br/>聚焦：AI 图片/视频内容生产、抖音/小红书/视频号多平台分发。</div>
-      <div class="bar">
-        <span class="chip">浅色高级感</span>
-        <span class="chip">移动端适配</span>
-        <span class="chip">持续更新中</span>
+      <div class="subtitle">
+        深圳市铂晶艺术文化有限公司 · 内容创作与品牌传播工作台。<br/>
+        聚焦 AI 图像/视频生产与抖音、小红书、微信视频号多平台分发。
       </div>
-    </div>
+      <div class="pill-row">
+        <span class="pill">浅色高级感</span>
+        <span class="pill">手机端优先适配</span>
+        <span class="pill">可持续扩展</span>
+      </div>
+    </section>
 
-    <div class="section">
-      <h2>账号入口</h2>
+    <section class="section">
+      <h2 class="section-title">账号入口</h2>
       <div class="grid">
         <article class="card">
           <h3>小红书｜晶制美学</h3>
-          <p>主页入口（已收录）</p>
-          <a class="btn" target="_blank" href="https://xhslink.com/m/1VFk1sqEXsh">打开主页</a>
+          <p>已接入主页入口，后续可补作品精选与数据看板。</p>
+          <a class="btn" target="_blank" href="https://xhslink.com/m/1VFk1sqEXsh">打开主页 ↗</a>
         </article>
         <article class="card">
           <h3>微信视频号</h3>
-          <p>ID：sphj5LpOGQvx637（链接待补）</p>
-          <a class="btn" href="#" onclick="return false;">待补主页链接</a>
+          <p>ID：sphj5LpOGQvx637（等待补充可跳转链接）。</p>
+          <a class="btn" href="#" onclick="return false;">待补链接</a>
         </article>
         <article class="card">
           <h3>抖音账号</h3>
-          <p>入口待补充（建议后续统一收录）</p>
-          <a class="btn" href="#" onclick="return false;">待补主页链接</a>
+          <p>入口待补充，建议统一做“主账号矩阵”展示。</p>
+          <a class="btn" href="#" onclick="return false;">待补链接</a>
         </article>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>内容生产 SOP（v1）</h2>
-      <div class="card">
-        <ul class="list">
-          <li>09:05 选题雷达：10 个可拍题目（含 3 秒钩子 + 平台建议 + 风险词提醒）</li>
-          <li>09:20 脚本工厂：TOP3 选题输出 15s/30s/60s 三版脚本 + 封面文案</li>
-          <li>发布前质检：标题利益点 / 前3秒留人 / 互动引导 / 风险词检查</li>
-          <li>21:30 晚间复盘：有效模式、无效模式、次日 TOP3 动作</li>
-        </ul>
+    <section class="section">
+      <h2 class="section-title">内容生产流水线</h2>
+      <div class="timeline">
+        <div class="step"><div class="dot"></div><div><b>09:05 选题雷达</b><span>输出 10 个可拍选题（含 3 秒钩子、平台建议、风险词提醒）。</span></div></div>
+        <div class="step"><div class="dot"></div><div><b>09:20 脚本工厂</b><span>TOP3 选题生成 15s / 30s / 60s 三版脚本 + 封面文案。</span></div></div>
+        <div class="step"><div class="dot"></div><div><b>发布前质检</b><span>检查利益点、前 3 秒留人、互动引导、违规风险词。</span></div></div>
+        <div class="step"><div class="dot"></div><div><b>21:30 晚间复盘</b><span>总结有效模式/无效模式，给次日 TOP3 动作。</span></div></div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>当前进度看板</h2>
+    <section class="section">
+      <h2 class="section-title">项目进度</h2>
       <div class="kpi">
-        <div class="box"><strong>已完成</strong><br/>Agent Reach、Docker、抖音MCP、小红书MCP部署</div>
-        <div class="box"><strong>进行中</strong><br/>小红书账号登录打通（最后一步）</div>
-        <div class="box"><strong>下一步</strong><br/>补充各平台主页链接与作品案例</div>
+        <div class="item"><div class="t">已完成</div><div class="v">Agent Reach / Docker / 抖音MCP / 小红书MCP部署</div></div>
+        <div class="item"><div class="t">进行中</div><div class="v">小红书账号登录打通（最后一步）</div></div>
+        <div class="item"><div class="t">下一步</div><div class="v">补齐视频号、抖音主页链接和代表作品页</div></div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>公司资料区（私密）</h2>
+    <section class="section">
+      <h2 class="section-title">公司资料区（私密）</h2>
       <div class="card">
-        <p>该区域将用于存放公司内部资料：SOP、素材目录、模板文档、供应链信息。<br/>下一步可开启密码访问。</p>
+        <p>用于存放公司 SOP、素材目录、模板文档、供应链信息。当前为占位，下一步可直接加密码访问。</p>
         <a class="btn" href="#" onclick="return false;">准备开启密码保护</a>
       </div>
-    </div>
+    </section>
 
-    <div class="note">如果你看到样式满意，晚上发第一批资料（文字/链接/图片）给我，我直接上正式内容。</div>
+    <div class="notice">你现在可以先看视觉与布局。确认风格后，我再补“作品墙 + 私密区登录 + 数据看板”。</div>
     <footer>© 2026 锦的创作资源导航</footer>
-  </div>
+  </main>
 </body>
 </html>
