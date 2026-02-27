@@ -1,64 +1,58 @@
 window.SITE_CONTENT = {
   brand: {
-    title: "锦的创作资源导航",
-    subtitle: "深圳市铂晶艺术文化有限公司 · 艺术内容创作工作台",
-    intro: "以空间美学与材料叙事为核心，构建 AI 图像/视频创作到多平台分发的一体化内容系统。",
-    heroQuote: "让每一条内容，都像一件可被记住的作品。"
+    title: "锦 · Personal Site",
+    subtitle: "Independent Creator",
+    intro: "影像、设计、叙事。记录灵感，发布作品，持续进化。",
+    heroQuote: "Make it simple. Make it memorable."
   },
   links: [
-    { name: "小红书｜晶制美学", url: "https://xhslink.com/m/1VFk1sqEXsh", desc: "品牌主页入口" },
-    { name: "微信视频号", url: "", desc: "ID: sphj5LpOGQvx637（待补主页链接）" },
-    { name: "抖音账号", url: "", desc: "待补主页链接" }
+    { name: "小红书", url: "https://xhslink.com/m/1VFk1sqEXsh", desc: "晶制美学" },
+    { name: "微信视频号", url: "", desc: "ID: sphj5LpOGQvx637" },
+    { name: "抖音", url: "", desc: "待补链接" }
   ],
   portfolio: [
-    { title: "水晶岛台 · 空间主角", platform: "小红书", cover: "", summary: "以通透材质塑造空间焦点，强调质感与光线层次。", link: "" },
-    { title: "艺术茶几 · 轻奢叙事", platform: "视频号", cover: "", summary: "聚焦细节工艺，打造有故事感的短视频表达。", link: "" },
-    { title: "高定家具 · 生活方式", platform: "抖音", cover: "", summary: "通过镜头语言展示高定产品与场景融合。", link: "" },
-    { title: "材质实验 · 透光测试", platform: "小红书", cover: "", summary: "用测试内容建立专业信任，增强收藏与转发。", link: "" }
+    { title: "Crystal Island", platform: "Xiaohongshu", cover: "", summary: "空间与材质叙事短片。", link: "" },
+    { title: "Light & Texture", platform: "Video Channel", cover: "", summary: "以光影为主角的视觉实验。", link: "" },
+    { title: "Living Sculpture", platform: "Douyin", cover: "", summary: "高定家具的镜头表达。", link: "" }
   ],
   services: [
-    { title: "AI视觉生产", desc: "批量生成高质感图像与短视频素材，统一品牌视觉语言。" },
-    { title: "脚本与文案策划", desc: "围绕平台调性输出可执行脚本与标题体系。" },
-    { title: "多平台分发策略", desc: "抖音 / 小红书 / 视频号差异化改写与发布建议。" },
-    { title: "数据复盘优化", desc: "基于播放、完播、互动数据持续迭代内容模型。" }
+    { title: "Visual Direction", desc: "视觉风格建立与统一。" },
+    { title: "Story-driven Short Video", desc: "以叙事结构提升内容记忆点。" },
+    { title: "Creative Prompting", desc: "AI 图像/视频提示词系统化。" }
   ],
   process: [
-    { step: "01", title: "选题雷达", text: "每日捕捉高价值话题，输出题目+钩子+平台建议。" },
-    { step: "02", title: "脚本工厂", text: "将 TOP 题材拆为 15/30/60 秒三层脚本。" },
-    { step: "03", title: "视觉包装", text: "封面文案、画面风格、节奏节点统一设计。" },
-    { step: "04", title: "上线复盘", text: "复盘有效模式与失效模式，迭代下一轮。" }
+    { step: "01", title: "Observe", text: "采集灵感与案例。" },
+    { step: "02", title: "Compose", text: "构图、节奏、文案同步。" },
+    { step: "03", title: "Produce", text: "生成、剪辑、上线。" },
+    { step: "04", title: "Refine", text: "数据反馈后迭代。" }
   ],
   resources: [
-    { category: "提示词模板", items: ["空间氛围镜头模板", "材质特写模板", "高定产品展示模板", "场景叙事模板"] },
-    { category: "发布清单", items: ["封面检查", "前3秒钩子", "互动引导", "风险词检查", "评论运营"] },
-    { category: "选题方向", items: ["案例前后对比", "工艺细节解析", "预算与避坑", "风格趋势观察"] }
+    { category: "Template", items: ["Hook 开场模板", "封面标题模板", "结尾互动模板"] },
+    { category: "Notes", items: ["镜头语言", "材质表达", "节奏控制"] }
   ],
   testimonials: [
-    { name: "品牌运营视角", text: "从内容到转化链路清晰后，团队执行效率显著提升。" },
-    { name: "创作执行视角", text: "脚本模板化后，拍摄决策成本下降，产出更稳定。" },
-    { name: "视觉审美视角", text: "统一视觉语言后，账号辨识度明显提高。" }
+    { name: "Creative Principle", text: "Less noise, more intention." },
+    { name: "Working Method", text: "Fast output, slow refinement." }
   ],
   faq: [
-    { q: "可以只做单个平台吗？", a: "可以。可按抖音/小红书/视频号单独制定内容节奏。" },
-    { q: "多久能看到优化效果？", a: "通常 7-14 天可看到结构化改造后的表现变化。" },
-    { q: "是否支持私密资料管理？", a: "支持，已预留私密区并可加密码访问。" }
+    { q: "你做什么内容？", a: "个人创作：空间美学、材质叙事、短视频表达。" },
+    { q: "可以合作吗？", a: "可以，欢迎通过联系方式沟通。" }
   ],
   contacts: [
-    { label: "公司名称", value: "深圳市铂晶艺术文化有限公司" },
-    { label: "小红书", value: "晶制美学" },
-    { label: "合作咨询", value: "请补充微信/邮箱" }
+    { label: "Name", value: "锦" },
+    { label: "Location", value: "Shenzhen" },
+    { label: "Contact", value: "请补充微信/邮箱" }
   ],
   cta: {
-    title: "准备好开始你的下一条作品了吗？",
-    text: "把链接、素材或需求发给我，我会直接生成可执行版本。"
+    title: "Open for collaboration",
+    text: "Send me your brief, and I will reply with a concrete creative plan."
   },
   privateArea: {
-    hint: "私密资料区（SOP / 素材 / 模板）",
-    password: "boking2026",
+    hint: "Private Notes",
+    password: "wdj2026",
     items: [
-      { title: "公司SOP（示例）", text: "在 assets/content.js 中替换为你的正式流程文档。" },
-      { title: "素材目录（示例）", text: "例如：产品图、视频脚本、封面模板、客户案例。" },
-      { title: "内部备注（示例）", text: "例如：对外口径、渠道优先级、发布时间策略。" }
+      { title: "Idea Backlog", text: "记录个人创作方向与草稿。" },
+      { title: "Prompt Vault", text: "常用提示词模板与参数。" }
     ]
   }
 };
