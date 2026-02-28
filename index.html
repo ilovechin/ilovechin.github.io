@@ -3,139 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>吴东锦 | 艺术工作者</title>
+  <title>吴东锦 | Personal Art Portfolio</title>
   <style>
-    :root{--bg:#e9e9e9;--text:#111;--muted:#666;--line:#d6d6d6;--accent:#b39b76;--max:1080px}
+    :root{
+      --bg:#0f0f11;--card:#17171b;--line:#2a2a31;--text:#f2f2f3;--muted:#a7a7b0;--gold:#c8a97a;--max:1200px;
+    }
     *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family:"PingFang SC","Noto Sans SC",Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    body{font-family:"PingFang SC","Noto Sans SC",Inter,Arial;background:var(--bg);color:var(--text);letter-spacing:.2px}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-    header{padding:30px 0}
-    .nav{display:flex;justify-content:center;gap:42px;align-items:center}
-    .nav a{text-decoration:none;color:#8a8a8a;font-size:18px}
-    .nav a:hover{color:#111}
+    header{position:fixed;left:0;right:0;top:0;z-index:50;background:linear-gradient(180deg,rgba(8,8,10,.85),rgba(8,8,10,.35),transparent);backdrop-filter: blur(6px)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:Georgia,serif;font-size:22px;letter-spacing:1px}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{color:#c8c8d0;font-size:14px;text-transform:uppercase;letter-spacing:1.8px}
+    .nav-links a:hover{color:#fff}
 
-    .hero{padding:110px 0 130px;min-height:72vh}
-    .label{font-family:Georgia,serif;color:var(--accent);font-size:46px;margin:0 0 8px}
-    .title{font-family:Georgia,"Times New Roman",serif;font-size:102px;line-height:.93;letter-spacing:-2.4px;margin:0 0 20px;max-width:760px}
-    .sub{font-size:24px;color:#3f3f3f;margin:0 0 8px}
-    .meta{font-size:18px;color:var(--muted);margin:0 0 28px}
-    .btn{display:inline-block;border:1px solid #b7aa90;padding:14px 28px;text-decoration:none;color:#222;font-size:18px;background:transparent}
-    .btn:hover{background:#ddd2bf}
+    .hero{min-height:100vh;display:flex;align-items:flex-end;background:
+      linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.72)),
+      url('https://images.unsplash.com/photo-1577083552431-6e5fd75fc75f?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;}
+    .hero-inner{padding:0 0 90px}
+    .tag{display:inline-block;color:var(--gold);border:1px solid rgba(200,169,122,.4);padding:8px 14px;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+    .hero h1{margin:0;font-family:Georgia,serif;font-size:78px;line-height:.95;max-width:820px}
+    .hero p{margin:16px 0 0;color:#d5d5dd;font-size:20px}
 
-    section{padding:70px 0;border-top:1px solid var(--line)}
-    h2{font-family:Georgia,serif;font-size:44px;margin:0 0 22px}
-    p{line-height:1.9;color:#444;font-size:19px}
+    section{padding:90px 0;border-top:1px solid var(--line)}
+    h2{margin:0 0 26px;font-family:Georgia,serif;font-size:42px}
+    .about{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center}
+    .about .txt p{font-size:18px;line-height:1.9;color:#c8c8cf}
+    .about .portrait{border:1px solid var(--line);background:var(--card);padding:10px}
 
-    .story h3{font-size:50px;font-family:Georgia,serif;margin:0 0 8px}
-    .story .bio{color:#6d6d6d;font-size:20px;margin:0 0 14px}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .item{position:relative;overflow:hidden;border:1px solid var(--line);background:#0a0a0c;min-height:220px}
+    .item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .item:hover img{transform:scale(1.05)}
+    .item .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));font-size:14px;color:#f1f1f4}
+    .span-6{grid-column:span 6}.span-4{grid-column:span 4}.span-8{grid-column:span 8}
 
-    .works-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    .card{border:1px solid var(--line);background:#f4f4f4;padding:22px;min-height:160px}
-    .card h4{font-size:28px;margin:0 0 10px;font-family:Georgia,serif}
+    .quote{background:linear-gradient(145deg,#16161a,#0f0f12);border:1px solid var(--line);padding:34px}
+    .quote p{font-family:Georgia,serif;font-size:30px;line-height:1.45;color:#f0ece7;margin:0}
+    .quote small{display:block;margin-top:12px;color:#9898a2}
 
-    .quote{text-align:center;padding:90px 0}
-    .quote .q{font-family:Georgia,serif;font-size:40px;line-height:1.4;max-width:900px;margin:0 auto}
-    .quote .a{margin-top:14px;color:#777;font-size:20px}
+    .contact{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .c{background:var(--card);border:1px solid var(--line);padding:16px}
+    .c .k{font-size:12px;color:#8e8e98;text-transform:uppercase;letter-spacing:1.4px}
+    .c .v{margin-top:8px;font-size:18px}
 
-    .news{border:1px solid var(--line);background:#f5f5f5;padding:24px}
-    .news .t{font-size:38px;font-family:Georgia,serif;margin:0 0 10px}
-    .news .d{color:#666;font-size:18px;margin-bottom:8px}
+    footer{padding:30px 0 44px;color:#8d8d96;font-size:13px;text-align:center}
 
-    .contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .ci{border:1px solid var(--line);background:#f7f7f7;padding:14px 16px}
-    .ci .k{font-size:13px;color:#7f7f7f}.ci .v{font-size:20px;margin-top:4px}
-
-    footer{padding:28px 0 44px;color:#7d7d7d;font-size:14px}
-
-    @media (max-width: 860px){
-      .nav{gap:18px}.nav a{font-size:16px}
-      .hero{padding:70px 0 90px}
-      .label{font-size:30px}.title{font-size:64px}.sub{font-size:20px}
-      h2{font-size:34px}.story h3{font-size:38px}
-      .works-grid,.contact{grid-template-columns:1fr}
-      .quote .q{font-size:30px}
+    @media (max-width:900px){
+      .hero h1{font-size:52px}.about{grid-template-columns:1fr}.contact{grid-template-columns:1fr 1fr}
+      .span-6,.span-8,.span-4{grid-column:span 12}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#works">Portfolios</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+  <div class="wrap nav">
+    <div class="brand">吴东锦</div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="wrap hero-inner">
+    <span class="tag">Artist Portfolio</span>
+    <h1>吴东锦<br/>Personal Art Website</h1>
+    <p>b.1999 · 艺术工作者</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="txt">
+      <h2>About</h2>
+      <p>我关注光线、材料与记忆之间的关系，偏爱低噪声、强气质、可回看性的作品。表达不求喧闹，追求在安静里成立。</p>
+      <p>创作方向覆盖绘画、空间叙事与影像呈现，核心是建立统一的个人视觉语言。</p>
     </div>
-  </header>
+    <div class="portrait">
+      <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80" alt="studio" />
+    </div>
+  </div>
+</section>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="wrap">
-        <p class="label">artist</p>
-        <h1 class="title">Welcome To My Website</h1>
-        <p class="sub">吴东锦 · 艺术工作者</p>
-        <p class="meta">(b.1999)</p>
-        <a class="btn" href="#works">View All My Artworks</a>
-      </div>
-    </section>
+<section id="works">
+  <div class="wrap">
+    <h2>Selected Works</h2>
+    <div class="gallery">
+      <article class="item span-8"><img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?auto=format&fit=crop&w=1600&q=80" alt="work1"><div class="cap">Light Archive</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80" alt="work2"><div class="cap">Silent Scene</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80" alt="work3"><div class="cap">Material Narrative</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=80" alt="work4"><div class="cap">City Fragments</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=80" alt="work5"><div class="cap">Night Light</div></article>
+      <article class="item span-6"><img src="https://images.unsplash.com/photo-1508182314998-3bd49473002f?auto=format&fit=crop&w=1200&q=80" alt="work6"><div class="cap">Exhibition Notes</div></article>
+      <article class="item span-6"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=80" alt="work7"><div class="cap">Studio Process</div></article>
+    </div>
+  </div>
+</section>
 
-    <section id="about">
-      <div class="wrap story">
-        <h2>The story of</h2>
-        <h3>吴东锦</h3>
-        <p class="bio">1999年生 · 艺术工作者</p>
-        <p>我的创作关注光线、材料与记忆之间的关系。画面不追求喧闹，而是追求“留白后的余味”。我更在意作品能否在安静里成立，而不是靠信息量取胜。</p>
-        <p>工作方法是：先观察，再提炼，再构建。长期方向是把绘画、空间感和影像叙事连接成一个完整的个人语言系统。</p>
-      </div>
-    </section>
+<section>
+  <div class="wrap quote">
+    <p>AN ARTIST SHOULD NOT LIE TO HIMSELF OR OTHERS. AN ARTIST SHOULD NOT STEAL IDEAS FROM OTHER ARTIST.</p>
+    <small>— marina abramovic</small>
+  </div>
+</section>
 
-    <section id="works">
-      <div class="wrap">
-        <h2>Artworks</h2>
-        <div class="works-grid">
-          <article class="card"><h4>Light Archive</h4><p>围绕光与记忆的绘画研究，记录日常中短暂却刺眼的瞬间。</p></article>
-          <article class="card"><h4>Material Narrative</h4><p>以肌理和材质建立叙事层次，让“触感”成为画面主角。</p></article>
-          <article class="card"><h4>Silent Scene</h4><p>低噪声画面实验，压低信息密度，保留观看者的解释空间。</p></article>
-          <article class="card"><h4>City Fragments</h4><p>从城市碎片提取视觉元素，重组为新的情绪地图。</p></article>
-        </div>
-      </div>
-    </section>
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="contact">
+      <div class="c"><div class="k">Name</div><div class="v">吴东锦</div></div>
+      <div class="c"><div class="k">Born</div><div class="v">1999</div></div>
+      <div class="c"><div class="k">Role</div><div class="v">艺术工作者</div></div>
+      <div class="c"><div class="k">Site</div><div class="v">ilovechin.github.io</div></div>
+    </div>
+  </div>
+</section>
 
-    <section class="quote">
-      <div class="wrap">
-        <p class="q">AN ARTIST SHOULD NOT LIE TO HIMSELF OR OTHERS.<br/>AN ARTIST SHOULD NOT STEAL IDEAS FROM OTHER ARTIST.</p>
-        <p class="a">— marina abramovic</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2>Recent Exhibition News</h2>
-        <article class="news">
-          <h3 class="t">《夜色中的灯》</h3>
-          <div class="d">2026 · 4-6月 · 杭州</div>
-          <p>20×20cm 布面油画。不同的灯光代表不同期许；那些平凡夜晚的闪烁，构成了记忆真正的亮部。</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <h2>Contact</h2>
-        <div class="contact">
-          <div class="ci"><div class="k">Name</div><div class="v">吴东锦</div></div>
-          <div class="ci"><div class="k">Born</div><div class="v">1999</div></div>
-          <div class="ci"><div class="k">Role</div><div class="v">艺术工作者</div></div>
-          <div class="ci"><div class="k">Website</div><div class="v">wdj.is-a.dev（待审核生效）</div></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">© 2026 吴东锦 · Personal Portfolio</div>
-  </footer>
+<footer>© 2026 吴东锦 · Personal Portfolio</footer>
 </body>
 </html>
