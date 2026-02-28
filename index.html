@@ -3,94 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CrystTao 晶仕道</title>
+  <title>吴东锦 | Personal Art Portfolio</title>
   <style>
-    :root{--bg:#0b0b0e;--card:#141419;--line:#2a2a31;--text:#f5f5f7;--muted:#a9a9b2;--gold:#c7a270;--max:1200px}
-    [data-theme="light"]{--bg:#f2f2f4;--card:#ffffff;--line:#dfdfe6;--text:#151519;--muted:#666673;--gold:#9b7b4b}
+    :root{--bg:#0f0f11;--card:#17171b;--line:#2a2a31;--text:#f2f2f3;--muted:#a7a7b0;--gold:#c8a97a;--max:1200px}
+    [data-theme="light"]{--bg:#efefef;--card:#fafafa;--line:#d8d8de;--text:#141417;--muted:#686874;--gold:#9f835b}
     *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family:"PingFang SC","Noto Sans SC",Inter,Arial;background:var(--bg);color:var(--text)}
-    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+    body{font-family:"PingFang SC","Noto Sans SC",Inter,Arial;background:var(--bg);color:var(--text);letter-spacing:.2px;transition:.25s}
+    img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-    header{position:fixed;inset:0 0 auto 0;z-index:30;background:linear-gradient(180deg,rgba(0,0,0,.72),transparent)}
-    [data-theme="light"] header{background:linear-gradient(180deg,rgba(255,255,255,.78),transparent)}
-    .nav{height:74px;display:flex;justify-content:space-between;align-items:center}
-    .brand{font-family:Georgia,serif;font-size:24px;letter-spacing:1px}
-    .brand small{font-size:12px;color:var(--gold);margin-left:8px}
-    .menu{display:flex;gap:18px;align-items:center}
-    .menu a{font-size:13px;color:var(--muted)}
-    .btn{border:1px solid var(--line);padding:6px 10px;font-size:12px;background:transparent;color:var(--text);cursor:pointer}
+    header{position:fixed;left:0;right:0;top:0;z-index:50;background:linear-gradient(180deg,rgba(8,8,10,.85),rgba(8,8,10,.35),transparent);backdrop-filter: blur(6px)}
+    [data-theme="light"] header{background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.35),transparent)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:Georgia,serif;font-size:22px;letter-spacing:1px}
+    .nav-right{display:flex;align-items:center;gap:16px}
+    .nav-links{display:flex;gap:20px}
+    .nav-links a{color:var(--muted);font-size:13px;letter-spacing:1.2px}
+    .nav-links a:hover{color:var(--text)}
+    .theme-btn{border:1px solid var(--line);background:transparent;color:var(--text);padding:6px 10px;font-size:12px;cursor:pointer}
 
-    .hero{min-height:100vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat}
+    .hero{min-height:100vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.72)),url('https://images.unsplash.com/photo-1577083552431-6e5fd75fc75f?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat}
     .hero-inner{padding:0 0 90px}
-    .tag{display:inline-block;border:1px solid rgba(199,162,112,.45);color:var(--gold);padding:8px 14px;font-size:12px;letter-spacing:2px;margin-bottom:16px}
-    h1{margin:0;font-family:Georgia,serif;font-size:74px;line-height:.95;max-width:820px}
-    .sub{margin-top:16px;color:#ddd;font-size:22px;max-width:780px}
+    .tag{display:inline-block;color:var(--gold);border:1px solid rgba(200,169,122,.45);padding:8px 14px;font-size:12px;letter-spacing:2px;margin-bottom:18px}
+    .hero h1{margin:0;font-family:Georgia,serif;font-size:78px;line-height:.95;max-width:820px}
+    .hero p{margin:16px 0 0;color:#d5d5dd;font-size:20px}
+    [data-theme="light"] .hero p{color:#ececf2}
 
     section{padding:90px 0;border-top:1px solid var(--line)}
-    h2{margin:0 0 20px;font-family:Georgia,serif;font-size:42px}
-    p{line-height:1.9;color:var(--muted)}
+    h2{margin:0 0 26px;font-family:Georgia,serif;font-size:42px}
 
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .card{border:1px solid var(--line);background:var(--card);padding:18px}
-    .card h3{margin:0 0 8px;font-size:22px;font-family:Georgia,serif}
+    .bio{background:var(--card);border:1px solid var(--line);padding:22px;margin-top:22px}
+    .bio h3{margin:0 0 12px;font-size:24px;font-family:Georgia,serif}
+    .bio p{margin:0;color:var(--muted);line-height:1.9;font-size:17px}
 
-    .story{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center}
-    .story .photo{border:1px solid var(--line);padding:8px;background:var(--card)}
+    .about{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center}
+    .about .txt p{font-size:18px;line-height:1.9;color:var(--muted)}
+    .about .portrait{border:1px solid var(--line);background:var(--card);padding:10px}
 
-    .contact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-    .item{border:1px solid var(--line);background:var(--card);padding:14px}
-    .item .k{font-size:12px;color:var(--muted)}
-    .item .v{margin-top:6px;font-size:18px}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .item{position:relative;overflow:hidden;border:1px solid var(--line);background:#0a0a0c;min-height:220px}
+    .item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .item:hover img{transform:scale(1.05)}
+    .item .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));font-size:14px;color:#f1f1f4}
+    .span-6{grid-column:span 6}.span-4{grid-column:span 4}.span-8{grid-column:span 8}
 
-    footer{padding:24px 0 40px;text-align:center;color:var(--muted);font-size:13px}
+    .quote{background:linear-gradient(145deg,#16161a,#0f0f12);border:1px solid var(--line);padding:34px}
+    [data-theme="light"] .quote{background:linear-gradient(145deg,#f7f7f8,#ececef)}
+    .quote p{font-family:Georgia,serif;font-size:30px;line-height:1.45;color:var(--text);margin:0}
+    .quote small{display:block;margin-top:12px;color:var(--muted)}
+
+    .contact{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .c{background:var(--card);border:1px solid var(--line);padding:16px}
+    .c .k{font-size:12px;color:var(--muted);letter-spacing:1.2px}.c .v{margin-top:8px;font-size:18px}
+
+    footer{padding:30px 0 44px;color:var(--muted);font-size:13px;text-align:center}
 
     @media (max-width:900px){
-      h1{font-size:50px}.sub{font-size:18px}.grid{grid-template-columns:1fr}.story{grid-template-columns:1fr}.contact{grid-template-columns:1fr 1fr}
+      .hero h1{font-size:52px}.about{grid-template-columns:1fr}.contact{grid-template-columns:1fr 1fr}
+      .span-6,.span-8,.span-4{grid-column:span 12}
+      .nav-links{gap:10px}
     }
   </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <div class="brand">CrystTao <small>晶仕道</small></div>
-    <nav class="menu">
-      <a href="#home">首页 Home</a>
-      <a href="#brand">品牌 Brand</a>
-      <a href="#works">作品 Works</a>
-      <a href="#contact">联系 Contact</a>
-      <button id="themeBtn" class="btn">☀/🌙</button>
-    </nav>
+    <div class="brand">吴东锦</div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#home">首页 Home</a>
+        <a href="#about">关于 About</a>
+        <a href="#works">作品 Works</a>
+        <a href="#contact">联系 Contact</a>
+      </nav>
+      <button id="themeBtn" class="theme-btn">☀/🌙</button>
+    </div>
   </div>
 </header>
 
 <section id="home" class="hero">
   <div class="wrap hero-inner">
-    <span class="tag">CRYSTAL ART LIFESTYLE</span>
-    <h1>CrystTao<br/>凝练水晶的通透之美</h1>
-    <p class="sub">「Cryst」为形，「Tao」为魂。将水晶艺术与当代生活方式融合，构建克制而高级的空间美学。</p>
+    <span class="tag">Artist Portfolio</span>
+    <h1>吴东锦<br/>Personal Art Website</h1>
+    <p>b.1999 · 艺术工作者</p>
   </div>
 </section>
 
-<section id="brand">
-  <div class="wrap story">
-    <div>
-      <h2>品牌简介</h2>
-      <p>CrystTao 作为原创艺术品牌，以水晶文化为载体，联合当代艺术家与非遗传承人，将艺术作品与 lifestyle 深度结合。</p>
-      <p>我们致力于打造兼具生活美学与轻奢格调的艺术精品，让艺术生活化，生活艺术化。</p>
+<section id="about">
+  <div class="wrap about">
+    <div class="txt">
+      <h2>About</h2>
+      <p>我关注光线、材料与记忆之间的关系，偏爱低噪声、强气质、可回看性的作品。表达不求喧闹，追求在安静里成立。</p>
+      <p>创作方向覆盖绘画、空间叙事与影像呈现，核心是建立统一的个人视觉语言。</p>
+      <div class="bio">
+        <h3>个人简介 · Biography</h3>
+        <p>吴东锦，1999 年出生，艺术工作者。持续在绘画与视觉叙事之间探索个人语言，强调作品的气质、秩序与时间感。长期创作主题聚焦“光”“记忆”“日常中的诗意”。</p>
+      </div>
     </div>
-    <div class="photo"><img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=1000&q=80" alt="CrystTao"/></div>
+    <div class="portrait">
+      <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80" alt="studio" />
+    </div>
   </div>
 </section>
 
 <section id="works">
   <div class="wrap">
-    <h2>核心价值</h2>
-    <div class="grid">
-      <article class="card"><h3>能量场域</h3><p>天然水晶承载纯净能量，以温润质感与光泽带来平静、和谐与治愈。</p></article>
-      <article class="card"><h3>情感容器</h3><p>不仅是空间装饰，更是时光与记忆的储存器，见证家的温度。</p></article>
-      <article class="card"><h3>艺境栖居</h3><p>将传统文化美学转译为现代生活语言，定义低调而高级的艺术日常。</p></article>
+    <h2>Selected Works</h2>
+    <div class="gallery">
+      <article class="item span-8"><img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?auto=format&fit=crop&w=1600&q=80" alt="work1"><div class="cap">Light Archive</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80" alt="work2"><div class="cap">Silent Scene</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80" alt="work3"><div class="cap">Material Narrative</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=80" alt="work4"><div class="cap">City Fragments</div></article>
+      <article class="item span-4"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=80" alt="work5"><div class="cap">Night Light</div></article>
+      <article class="item span-6"><img src="https://images.unsplash.com/photo-1508182314998-3bd49473002f?auto=format&fit=crop&w=1200&q=80" alt="work6"><div class="cap">Exhibition Notes</div></article>
+      <article class="item span-6"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=80" alt="work7"><div class="cap">Studio Process</div></article>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap quote">
+    <p>AN ARTIST SHOULD NOT LIE TO HIMSELF OR OTHERS. AN ARTIST SHOULD NOT STEAL IDEAS FROM OTHER ARTIST.</p>
+    <small>— marina abramovic</small>
   </div>
 </section>
 
@@ -98,22 +132,28 @@
   <div class="wrap">
     <h2>Contact</h2>
     <div class="contact">
-      <div class="item"><div class="k">Brand</div><div class="v">CrystTao 晶仕道</div></div>
-      <div class="item"><div class="k">Category</div><div class="v">水晶艺术家居</div></div>
-      <div class="item"><div class="k">Location</div><div class="v">深圳湾万象城</div></div>
-      <div class="item"><div class="k">Status</div><div class="v">素材精修中</div></div>
+      <div class="c"><div class="k">Name</div><div class="v">吴东锦</div></div>
+      <div class="c"><div class="k">Born</div><div class="v">1999</div></div>
+      <div class="c"><div class="k">Role</div><div class="v">艺术工作者</div></div>
+      <div class="c"><div class="k">Site</div><div class="v">ilovechin.github.io</div></div>
     </div>
   </div>
 </section>
 
-<footer>© 2026 CrystTao 晶仕道</footer>
+<footer>© 2026 吴东锦 · Personal Portfolio</footer>
 
 <script>
-(function(){
-  const root=document.documentElement;const btn=document.getElementById('themeBtn');
-  const saved=localStorage.getItem('ct_theme')||'dark';root.setAttribute('data-theme',saved);
-  btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('ct_theme',n);});
-})();
+  (function(){
+    const root = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('themeMode') || 'dark';
+    root.setAttribute('data-theme', saved);
+    btn.addEventListener('click', ()=>{
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('themeMode', next);
+    });
+  })();
 </script>
 </body>
 </html>
